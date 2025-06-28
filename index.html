@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceHub - Find Your Perfect Match</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-handshake"></i> FreelanceHub</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="login.html" class="nav-link login-btn">Login</a></li>
+                <li><a href="signup.html" class="nav-link signup-btn">Sign Up</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find the Perfect Freelancer for Your Project</h1>
+            <p>Connect with thousands of skilled professionals ready to bring your ideas to life</p>
+            <div class="hero-buttons">
+                <a href="jobs.html" class="btn btn-primary">Find Jobs</a>
+                <a href="developers.html" class="btn btn-secondary">Hire Talent</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Active Users Monthly</p>
+                </div>
+                <div class="stat-item">
+                    <h3>5,000+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Jobs Section -->
+    <section class="recent-jobs">
+        <div class="container">
+            <h2>Recent Job Postings</h2>
+            <div class="jobs-grid" id="homeJobsGrid">
+                <!-- Jobs will be loaded here by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="jobs.html" class="btn btn-outline">View All Jobs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Developers Section -->
+    <section class="top-developers">
+        <div class="container">
+            <h2>Top Rated Developers</h2>
+            <div class="developers-grid" id="homeDevelopersGrid">
+                <!-- Developers will be loaded here by JavaScript -->
+            </div>
+            <div class="section-footer">
+                <a href="developers.html" class="btn btn-outline">View All Developers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-handshake"></i> FreelanceHub</h3>
+                    <p>Connecting talented freelancers with amazing opportunities worldwide.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="jobs.html">Browse Jobs</a></li>
+                        <li><a href="developers.html">Find Developers</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="test_data/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

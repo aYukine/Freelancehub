@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - FreelanceHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><i class="fas fa-handshake"></i> FreelanceHub</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="jobs.html" class="nav-link">Jobs</a></li>
+                <li><a href="developers.html" class="nav-link">Developers</a></li>
+                <li><a href="chat.html" class="nav-link">Messages</a></li>
+                <li><a href="profile.html" class="nav-link">Profile</a></li>
+                <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Post Form -->
+    <div class="job-post-container">
+        <h2><i class="fas fa-plus-circle"></i> Post a New Job</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Find the perfect freelancer for your project</p>
+        
+        <form id="jobForm">
+            <div class="form-group">
+                <label for="title">Job Title</label>
+                <input type="text" id="title" name="title" required placeholder="e.g., Build a responsive e-commerce website">
+            </div>
+            
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile Development">Mobile Development</option>
+                    <option value="Design">Design</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Writing">Writing</option>
+                    <option value="Video & Animation">Video & Animation</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="description">Job Description</label>
+                <textarea id="description" name="description" required rows="5" 
+                    placeholder="Describe your project in detail. Include requirements, deliverables, and any specific preferences."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="jobSkills">Required Skills (press Enter or comma to add)</label>
+                <input type="text" id="jobSkills" name="skills" placeholder="e.g., JavaScript, React, Node.js">
+                <small style="color: #666;">Add skills that are essential for this job</small>
+            </div>
+            
+            <div class="form-group">
+                <label>How would you like to pay?</label>
+                <div class="pricing-options">
+                    <div class="pricing-option" data-type="project">
+                        <h4><i class="fas fa-project-diagram"></i> Fixed Price</h4>
+                        <p>Pay a fixed amount for the entire project</p>
+                    </div>
+                    <div class="pricing-option" data-type="hourly">
+                        <h4><i class="fas fa-clock"></i> Hourly Rate</h4>
+                        <p>Pay an hourly rate for time worked</p>
+                    </div>
+                </div>
+                <input type="hidden" id="paymentType" name="paymentType" required>
+            </div>
+            
+            <div class="form-group" id="budgetGroup" style="display: none;">
+                <label for="budget">Project Budget ($)</label>
+                <input type="number" id="budget" name="budget" min="50" placeholder="e.g., 5000">
+            </div>
+            
+            <div class="form-group" id="hourlyGroup" style="display: none;">
+                <label for="hourlyRate">Hourly Rate ($)</label>
+                <input type="number" id="hourlyRate" name="hourlyRate" min="5" placeholder="e.g., 75">
+            </div>
+            
+            <div class="form-group">
+                <label for="duration">Project Duration</label>
+                <select id="duration" name="duration" required>
+                    <option value="">Select duration</option>
+                    <option value="Less than 1 week">Less than 1 week</option>
+                    <option value="1-2 weeks">1-2 weeks</option>
+                    <option value="2-4 weeks">2-4 weeks</option>
+                    <option value="1-2 months">1-2 months</option>
+                    <option value="2-3 months">2-3 months</option>
+                    <option value="3-6 months">3-6 months</option>
+                    <option value="More than 6 months">More than 6 months</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="experienceLevel">Experience Level Required</label>
+                <select id="experienceLevel" name="experienceLevel" required>
+                    <option value="">Select experience level</option>
+                    <option value="Beginner">Beginner - Good for simple tasks</option>
+                    <option value="Intermediate">Intermediate - Moderate complexity</option>
+                    <option value="Expert">Expert - High complexity projects</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="deadline">Project Deadline</label>
+                <input type="date" id="deadline" name="deadline" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="location">Location Preference</label>
+                <select id="location" name="location">
+                    <option value="Remote">Remote (Anywhere)</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Australia">Australia</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <i class="fas fa-rocket"></i> Post Job
+            </button>
+        </form>
+        
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 30px; border-left: 4px solid #28a745;">
+            <h4 style="margin-bottom: 15px; color: #28a745;">
+                <i class="fas fa-lightbulb"></i> Tips for a Great Job Post
+            </h4>
+            <ul style="color: #666; margin: 0; padding-left: 20px;">
+                <li>Be specific about your requirements and expectations</li>
+                <li>Include examples or references when possible</li>
+                <li>Set a realistic budget and timeline</li>
+                <li>List all the skills and technologies needed</li>
+                <li>Describe your ideal freelancer's experience level</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="test_data/data.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const deadlineInput = document.getElementById('deadline');
+            const today = new Date().toISOString().split('T')[0];
+            deadlineInput.setAttribute('min', today);
+        });
+    </script>
+</body>
+</html>
